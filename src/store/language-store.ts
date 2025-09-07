@@ -144,7 +144,7 @@ export const translations = {
     contact: 'தொடர்பு',
     
     // Hero Section
-    name: 'பாலபிரகாஷ் எஸ்',
+    name: 'பாலபிரகாஷ் சு',
     title: 'கணினி அறிவியல் பொறியாளர்',
     subtitle: 'பி.டெக், கணினி அறிவியல் மற்றும் பொறியியல்',
     year: '2026',

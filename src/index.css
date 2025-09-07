@@ -1,0 +1,297 @@
+/**
+ * =====================================
+ * UI DESIGN SYSTEM
+ * =====================================
+ * * Project: Bala Prakash S Portfolio
+ * Type: Political Style Portfolio
+ * * DESIGN PHILOSOPHY
+ * -----------------
+ * Core Principle: Bold political identity with professional excellence
+ * Design Style: Naam Tamilar inspired - Strong Tamil cultural identity
+ * Emotion Goal: Pride, confidence, cultural connection
+ * * VISUAL LANGUAGE
+ * ----------------
+ * Primary Focus: Tamil identity with modern professionalism
+ * Hierarchy: Bold headers, structured content, clear sections
+ * Whitespace: Balanced for readability with impactful sections
+ * * COLOR SYSTEM
+ * -------------
+ * Red: 0 85% 45% - Primary Tamil identity color
+ * Black: 0 0% 8% - Strong text and accents
+ * White: 0 0% 98% - Clean backgrounds
+ * Gold: 45 95% 50% - Accent highlights
+ * Gray: 0 0% 40% - Secondary text
+ * * TYPOGRAPHY
+ * ----------
+ * Display: Bold Tamil/English headers
+ * Body: Clean readable content
+ * Scale: Strong hierarchy for impact
+ * * INTERACTIONS
+ * ------------
+ * Feedback: Bold state changes
+ * Transitions: 300ms smooth
+ * States: High contrast visibility
+ * * ACCESSIBILITY
+ * -------------
+ * Contrast: WCAG AA compliant
+ * Focus: Clear red indicators
+ * Motion: Smooth but purposeful
+ * ====================================
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 0 85% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 45 95% 50%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 85% 45%;
+    --chart-1: 0 85% 45%;
+    --chart-2: 45 95% 50%;
+    --chart-3: 0 0% 8%;
+    --chart-4: 0 0% 40%;
+    --chart-5: 0 0% 60%;
+    --radius: 0.5rem;
+    
+    /* Naam Tamilar specific colors */
+    --tamil-red: 0 85% 45%;
+    --tamil-black: 0 0% 8%;
+    --tamil-gold: 45 95% 50%;
+    --tamil-white: 0 0% 98%;
+    --tamil-gray: 0 0% 40%;
+  }
+  
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Noto Sans Tamil', sans-serif;
+  }
+  
+  /* Tamil font support */
+  .tamil-text {
+    font-family: 'Noto Sans Tamil', 'Inter', sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  
+  /* Naam Tamilar inspired elements */
+  .naam-header {
+    background: linear-gradient(135deg, hsl(var(--tamil-red)), hsl(var(--tamil-black)));
+  }
+  
+  .naam-accent {
+    background: linear-gradient(90deg, hsl(var(--tamil-red)), hsl(var(--tamil-gold)));
+  }
+  
+  /* Language toggle styles */
+  .lang-toggle {
+    background: hsl(var(--tamil-red));
+    transition: all 0.3s ease;
+  }
+  
+  .lang-toggle:hover {
+    background: hsl(var(--tamil-black));
+  }
+  
+  /* Section styling */
+  .section-divider {
+    border-top: 3px solid hsl(var(--tamil-red));
+    position: relative;
+  }
+  
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: hsl(var(--tamil-gold));
+  }
+}
+
+@layer components {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Section spacing for navigation */
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  /* Navigation styles */
+  .nav-links {
+    @apply flex gap-4 items-center;
+  }
+  
+  .nav-link {
+    @apply text-white no-underline font-medium px-3 py-2 rounded-lg transition-all duration-300 relative;
+  }
+  
+  .nav-link:hover {
+    @apply bg-white bg-opacity-10 text-yellow-300 transform -translate-y-0.5;
+  }
+  
+  .nav-link.active {
+    @apply bg-yellow-400 text-red-800 shadow-lg transform scale-105;
+  }
+  
+  .mobile-menu-button {
+    @apply text-white bg-transparent border-0 p-2 rounded-lg transition-all duration-300;
+  }
+  
+  .mobile-menu-button:hover {
+    @apply bg-white bg-opacity-10;
+  }
+  
+  .mobile-menu {
+    @apply absolute top-full left-0 right-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800 shadow-2xl z-50 opacity-0 invisible transform -translate-y-2 transition-all duration-300;
+  }
+  
+  .mobile-menu.open {
+    @apply opacity-100 visible transform translate-y-0;
+  }
+  
+  .mobile-menu .nav-link {
+    @apply block px-6 py-4 border-b border-white border-opacity-10;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    background: linear-gradient(
+    135deg,
+    #0b6b2e,
+    #1a9c4a,
+    #32d583
+  );
+    @apply min-h-screen flex items-center relative;
+  }
+  
+  .hero-content {
+    @apply relative z-10;
+  }
+  
+  /* Card styles */
+  .naam-card {
+    @apply bg-white border-l-4 border-red-600 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* Button styles */
+  .naam-button {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  .naam-button-outline {
+    @apply border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+  
+  /* Enhanced section divider */
+  .section-divider {
+    @apply border-b-4 border-red-600 relative inline-block;
+  }
+  
+  .section-divider::after {
+    content: '';
+    @apply absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-yellow-400;
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 1024px) {
+    .nav-links {
+      @apply gap-2;
+    }
+    
+    .nav-link {
+      @apply px-2 py-1 text-sm;
+    }
+  }
+
+  @media (max-width: 68px) {
+    .nav-links {
+      @apply hidden;
+    }
+    
+    .mobile-menu-button {
+      @apply block;
+    }
+    
+    section {
+      scroll-margin-top: 70px;
+    }
+    
+    .hero-section {
+      @apply min-h-screen py-20;
+    }
+    
+    .section-divider::after {
+      @apply w-16;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero-section {
+      @apply py-16;
+    }
+    
+    .section-divider::after {
+      @apply w-12;
+    }
+    .nav-link{
+      @apply hidden
+    }
+  }
+  @media (max-width: 1024px) {
+    .nav-links {
+      @apply hidden;
+    }
+    .mobile-menu-button {
+      @apply block;
+    }
+  }
+}

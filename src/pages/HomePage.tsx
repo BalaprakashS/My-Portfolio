@@ -102,7 +102,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Enhanced Navigation Header */}
-      <audio ref={audioRef} src="/Bala.mp3" preload="auto" />
+      <audio ref={audioRef} src="" preload="auto" />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-600 via-red-700 to-red-800 shadow-2xl">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
@@ -738,7 +738,7 @@ export default function HomePage() {
     e.preventDefault();
     
     // Show loading video modal immediately
-    setCurrentVideo("Bala-Form.mp4");
+    setCurrentVideo("");
     setIsVideoModalOpen(true);
     setIsSubmitting(true);
     
@@ -783,13 +783,13 @@ export default function HomePage() {
     
     // Change video based on result
     if (result.success) {
-      setCurrentVideo("Bala-Victory.mp4");
+      setCurrentVideo("");
       // Clear form fields
       (document.getElementById("name") as HTMLInputElement).value = "";
       (document.getElementById("email") as HTMLInputElement).value = "";
       (document.getElementById("message") as HTMLTextAreaElement).value = "";
     } else {
-      setCurrentVideo("Bala-Failure.mp4");
+      setCurrentVideo("");
     }
     
     // Play the result video

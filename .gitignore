@@ -22,7 +22,10 @@ Thumbs.db
 dist/
 build/
 out/
+<<<<<<< HEAD
 server/ 
+=======
+>>>>>>> 4b5d181e7dc11f6366a94b912a534f17501d5afd
 
 # IDEs and editors
 .vscode/

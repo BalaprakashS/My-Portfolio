@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
@@ -79,5 +80,27 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1"
+=======
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.6",
+    "nodemon": "^3.1.10"
+>>>>>>> 4b5d181e7dc11f6366a94b912a534f17501d5afd
   }
 }
